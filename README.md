@@ -1,1 +1,1 @@
-This is a readme file
+Learning about ponters, arrays, and strings... again
