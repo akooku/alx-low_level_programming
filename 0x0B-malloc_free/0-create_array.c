@@ -6,7 +6,7 @@
  * it with a specific char
  *
  * @size: unsigned integer
- * @char: specific character
+ * @c: specific character
  *
  * Return: NULL if size is 0, a pointer to the array,
  * NULL if it fails
