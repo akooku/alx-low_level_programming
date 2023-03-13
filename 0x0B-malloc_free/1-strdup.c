@@ -13,7 +13,9 @@
 
 char *_strdup(char *str)
 {
-	char *newstr = (char *)malloc(sizeof(str));
+	unsigned int i;
+	unsigned int len = 0;
+	char *newstr = (char *)malloc(len + 1);
 
 	if (str == NULL)
 	{
@@ -25,6 +27,15 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	newstr[] = str;
+	while (str[len])
+	{
+		len++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		newstr[] = str[];
+	}
+
 	return (newstr);
 }
