@@ -13,8 +13,8 @@
 
 char *_strdup(char *str)
 {
-	int i;
-	int len = 0;
+	signed int i;
+	signed int len = 0;
 	char *newstr = (char *)malloc(len + 1);
 
 	if (str == NULL)
@@ -24,6 +24,7 @@ char *_strdup(char *str)
 
 	if (newstr == NULL)
 	{
+		free(newstr);
 		return (NULL);
 	}
 
@@ -38,5 +39,4 @@ char *_strdup(char *str)
 	}
 
 	return (newstr);
-	free(newstr);
 }
