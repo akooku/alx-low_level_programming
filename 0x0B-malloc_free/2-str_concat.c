@@ -26,14 +26,14 @@ char *str_concat(char *s1, char *s2)
 
 	while (s1[len1])
 	{
-		len++;
+		len1++;
 	}
 
 	len2 = len1;
 
 	while (s2[len2])
 	{
-		len2++
+		len2++;
 	}
 
 	comb = (char *) malloc(sizeof(char) * (len2 + 1));
