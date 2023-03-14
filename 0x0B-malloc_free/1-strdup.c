@@ -22,17 +22,17 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	if (newstr == 0)
-	{
-		return (NULL);
-	}
-
 	while (str[len])
 	{
 		len++;
 	}
 
 	newstr = (char *)malloc(sizeof(char) * (len + 1));
+
+	if (newstr == 0)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < len; i++)
 	{
