@@ -19,37 +19,35 @@ char *str_concat(char *s1, char *s2)
 	unsigned int j;
 	char *comb;
 
-	if (s1 == NULL)
-		_putchar(' ');
+	if (s1 != NULL)
+		while (s1[len1])
+		{
+			len1++;
+		}
 
-	if (s2 == NULL)
-		_putchar(' ');
-
-	while (s1[len1])
-	{
-		len1++;
-	}
-
-	while (s2[len2])
-	{
-		len2++;
-	}
+	if (s2 != NULL)
+		while (s2[len2])
+		{
+			len2++;
+		}
 
 	comb = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
 
 	if (comb == NULL)
 		return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-		comb[i] = s1[i];
-	}
+	if (s1 != NULL)
+		for (i = 0; s1[i] != '\0'; i++)
+		{
+			comb[i] = s1[i];
+		}
 
-	for (j = 0; s2[j] != '\0'; j++)
-	{
-		comb[len1 + j] = s2[j];
-	}
+	if (s2 != NULL)
+		for (j = 0; s2[j] != '\0'; j++)
+		{
+			comb[len1 + j] = s2[j];
+		}
 
-	comb[len1 + len2] = '\0';
+	comb[i + j] = '\0';
 	return (comb);
 }
