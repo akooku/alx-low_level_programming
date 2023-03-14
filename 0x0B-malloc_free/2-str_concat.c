@@ -48,6 +48,6 @@ char *str_concat(char *s1, char *s2)
 			comb[len1 + j] = s2[j];
 		}
 
-	comb[i + j] = '\0';
+	comb[len1 + len2] = '\0';
 	return (comb);
 }
