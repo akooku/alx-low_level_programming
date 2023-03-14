@@ -16,6 +16,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int len1 = 0;
 	unsigned int len2 = 0;
 	unsigned int i;
+	unsigned int j;
 	char *comb;
 
 	if (s1 == NULL)
@@ -41,14 +42,14 @@ char *str_concat(char *s1, char *s2)
 		comb[i] = s1[i];
 	}
 
-	for (i = 0; i < (len1 + len2); i++)
+	for (j = 0; j < (len1 + len2); j++)
 	{
-		comb[len1 + i + 1] = s2[i];
+		comb[i + j + 1] = s2[i];
 	}
 
 	if (comb == NULL)
 		return (NULL);
 
-	comb[len1 + len2 + 1] = '\0';
+	comb[i + j + 1] = '\0';
 	return (comb);
 }
