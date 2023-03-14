@@ -20,10 +20,10 @@ char *str_concat(char *s1, char *s2)
 	char *comb;
 
 	if (s1 == NULL)
-		_putchar(' ');
+		s1 = ' ';
 
 	if (s2 == NULL)
-		_putchar(' ');
+		s2 = ' ';
 
 	while (s1[len1])
 	{
@@ -37,18 +37,18 @@ char *str_concat(char *s1, char *s2)
 
 	comb = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
 
+	if (comb == NULL)
+		return (NULL);
+
 	for (i = 0; i < len1; i++)
 	{
 		comb[i] = s1[i];
 	}
 
-	for (j = 0; j < (len1 + len2); j++)
+	for (j = 0; j < len2; j++)
 	{
-		comb[i + j + 1] = s2[i];
+		comb[i + j + 1] = s2[j];
 	}
-
-	if (comb == NULL)
-		return (NULL);
 
 	comb[i + j + 1] = '\0';
 	return (comb);
