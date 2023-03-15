@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 /**
  * **alloc_grid - returns a pointer to a 2 dimensional
@@ -13,17 +15,22 @@
 
 int **alloc_grid(int width, int height)
 {
-	int *grid[width][height];
+	int **grid;
 	int i;
 	int j;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	grid[width][height] = (int *) malloc(sizeof(int) * (width * height));
+	grid = (int **) malloc(sizeof(int *) * width);
 
 	if (grid == NULL)
 		return (NULL);
+
+	for (i = 0; i < width; i++)
+	{
+		grid[i] = (int *) malloc(sizeof(int) * height);
+	}
 
 	for (i = 0; i < width; i++)
 	{
