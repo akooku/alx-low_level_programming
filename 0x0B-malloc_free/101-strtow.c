@@ -52,7 +52,7 @@ char **strtow(char *str)
 					return (NULL);
 				}
 				strncpy(words[i], word, word_len);
-				word[i][word_len] = '\0';
+				words[i][word_len] = '\0';
 				i++;
 				word = NULL;
 			}
