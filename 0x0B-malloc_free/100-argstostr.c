@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stddef.h>
 /**
   * argstostr - concatenates given arguments into strings
@@ -26,7 +27,7 @@ char *argstostr(int ac, char **av)
 		}
 		len += len1 + 1;
 	}
-	str = malloc(sizeof(char) * (len + 1));
+	str = (char *) malloc(sizeof(char) * (len + 1));
 
 	if (str == NULL)
 	{
