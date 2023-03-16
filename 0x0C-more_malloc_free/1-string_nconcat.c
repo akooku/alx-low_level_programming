@@ -2,55 +2,44 @@
 #include <stdlib.h>
 
 /**
- * *string_nconcat - concatenates two strings
+ * string_nconcat - Concatenate two strings using n amount of s2
+ * @s1: First string
+ * @s2: String to add to end of s1
+ * @n: Amount of s2 to add to s1
  *
- * @s1: string 1
- * @s2: string 2
- * @n: number of bytes
- *
- * Return: pointer on success, NULL on failure
+ * Return: pointer to new area in memory, NULL if it fails
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i;
-	int j;
-	int len1 = 0;
-	int len2 = 0;
-	char *newstr;
+	char *nstr, *empt;
+	unsigned int i, len, j;
+	unsigned int size;
 
-	if (s1 != NULL)
-		while (s1[len1])
-		{
-			len1++;
-		}
-	if (s2 != NULL)
-	{
-		while (s2[len2])
-		{
-			len2++;
-		}
-		if (n >= len2)
-			n = len2;
-	}
-
-	newstr = malloc(sizeof(*newstr) * (len1 + len2 + 1));
-	if (newstr == NULL)
-	{
-		free(newstr);
+	len = 0;
+	empt = "";
+	if (s1 == NULL)
+		s1 = empt;
+	if (s2 == NULL)
+		s2 = empt;
+	while (s1[len] != '\0')
+		len++;
+	size = (len + n) * sizeof(*nstr);
+	nstr = malloc(size + 1);
+	if (nstr == NULL)
 		return (NULL);
+	i = 0;
+	while (i < size && s1[i] != '\0')
+	{
+		nstr[i] = s1[i];
+		i++;
 	}
-	if (s1 != NULL)
-		for (i = 0; s1[i] != '\0'; i++)
-		{
-			newstr[i] = s1[i];
-		}
-	if (s2 != NULL)
-		for (j = 0; s2[j] != '\0'; j++)
-		{
-			newstr[i + j] = s2[j];
-		}
-
-	newstr[i + j] = '\0';
-	return (newstr);
+	j = 0;
+	while (i < size && s2[j] != '\0')
+	{
+		nstr[i] = s2[j];
+		i++;
+		j++;
+	}
+	nstr[i] = '\0';
+	return (nstr);
 }
