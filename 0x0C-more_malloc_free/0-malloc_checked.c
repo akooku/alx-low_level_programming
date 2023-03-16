@@ -15,8 +15,7 @@ void *malloc_checked(unsigned int b)
 
 	if (all == NULL)
 	{
-		_putchar(98);
-		exit(1);
+		exit(98);
 	}
 
 	return (all);
