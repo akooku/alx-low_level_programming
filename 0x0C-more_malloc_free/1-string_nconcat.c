@@ -19,36 +19,35 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int len2 = 0;
 	char *newstr;
 
-	if (s1 == NULL)
-		_putchar(' ');
-	if (s2 == NULL)
-		_putchar(' ');
-
-	while (s1[len1])
+	if (s1 != NULL)
+		while (s1[len1])
+		{
+			len1++;
+		}
+	if (s2 != NULL)
 	{
-		len1++;
+		while (s2[len2])
+		{
+			len2++;
+		}
+		if (n >= len2)
+			n = len2;
 	}
-
-	while (s2[len2])
-	{
-		len2++;
-	}
-
-	if (n >= len2)
-		n = len2;
 
 	newstr = malloc(len1 + n + 1);
 	if (newstr == NULL)
 		return (NULL);
 
-	for (i = 0; i < len1; i++)
-	{
-		newstr[i] = s1[i];
-	}
-	for (j = 0; j < n; j++)
-	{
-		newstr[i + j] = s2[j];
-	}
+	if (s1 != NULL)
+		for (i = 0; s1[i] != '\0'; i++)
+		{
+			newstr[i] = s1[i];
+		}
+	if (s2 != NULL)
+		for (j = 0; s2[j] != '\0'; j++)
+		{
+			newstr[i + j] = s2[j];
+		}
 
 	newstr[i + j] = '\0';
 	return (newstr);
