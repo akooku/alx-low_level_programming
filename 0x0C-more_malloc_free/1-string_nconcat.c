@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
  * *string_nconcat - concatenates two strings
  *
@@ -9,10 +10,13 @@
  *
  * Return: pointer on success, NULL on failure
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, j;
-	int len1 = 0, len2 = 0;
+	int i;
+	int j;
+	int len1 = 0;
+	int len2 = 0;
 	char *newstr;
 
 	if (s1 == NULL)
@@ -24,10 +28,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		len1++;
 	}
+
 	while (s2[len2])
 	{
 		len2++;
 	}
+
 	if (n >= len2)
 		n = len2;
 
@@ -39,7 +45,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		newstr[i] = s1[i];
 	}
-
 	for (j = 0; j < n; j++)
 	{
 		newstr[i + j] = s2[j];
