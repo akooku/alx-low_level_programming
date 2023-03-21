@@ -8,7 +8,7 @@
  * @owner: the dogs owner
  */
 
-typdef struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
