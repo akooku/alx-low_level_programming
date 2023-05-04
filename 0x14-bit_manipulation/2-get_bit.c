@@ -11,5 +11,8 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
+	if (index > MAX_SIZE)
+		return (-1);
+
 	return ((n >> index) & 1);
 }
