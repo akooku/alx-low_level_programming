@@ -21,10 +21,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (flip_bits)
 	{
-		if ((flip_bits & mask) == mask)
-			count_bits += mask;
-
-		flip_bits = flip_bits >> 1;
+		count_bits = count_bits + (flip_bits & mask);
+		flip_bits = flip_bits >> mask;
 	}
 
 	return (count_bits);
